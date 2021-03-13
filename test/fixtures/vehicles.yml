@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  license_plate: MyString
+  brand: MyString
+  serial_number: MyString
+  tax_horsepower: 1
+
+two:
+  name: MyString
+  license_plate: MyString
+  brand: MyString
+  serial_number: MyString
+  tax_horsepower: 1

@@ -1,0 +1,46 @@
+<%= form_with(model: vehicle) do |form| %>
+  <% if vehicle.errors.any? %>
+    <div class="message is-danger">
+      <div class="message-header">
+        <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+      </div>
+
+      <div class="message-body">
+        <ul>
+          <% vehicle.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <%= form.text_field :name, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license_plate, class: "label" %>
+    <%= form.text_field :license_plate, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand, class: "label" %>
+    <%= form.text_field :brand, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial_number, class: "label" %>
+    <%= form.text_field :serial_number, class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tax_horsepower, class: "label" %>
+    <%= form.number_field :tax_horsepower, class: "input" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button"%>
+  </div>
+<% end %>

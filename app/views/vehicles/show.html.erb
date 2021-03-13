@@ -1,0 +1,36 @@
+<% content_for :title do %>
+  <%= @vehicle.name %> &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
+
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
+    <nav class="panel is-link">
+      <p class="panel-heading">
+        Name:
+        <%= @vehicle.name %>
+      </p>
+      <div class="panel-block">
+        License plate:
+        <%= @vehicle.license_plate %>
+      </div>
+      <div class="panel-block">
+        Brand:
+        <%= @vehicle.brand %>
+      </div>
+      <div class="panel-block">
+        Serial number:
+        <%= @vehicle.serial_number %>
+      </div>
+      <div class="panel-block">
+        Tax horsepower:
+        <%= @vehicle.tax_horsepower %>
+      </div>
+    </nav>
+    <div class="columns is-mobile">
+      <div class="column">
+        <%= link_to 'Edit', edit_vehicle_path(@vehicle), class: "button is-gray" %>
+        <%= link_to 'Delete', vehicles_path(@vehicle), method: :delete, data: {confirm: "Are you sure?"},  class: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
