@@ -18,9 +18,14 @@
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <span>
+            <span class="mt-3">
               <%= link_to "Create new vehicle", new_vehicle_path, class: "button is-success" %>
             </span>
+            <% if user_signed_in? %>
+              <span class="mt-3 ml-3">
+                <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "button" %>
+              </span>
+            <% end %>
           </div>
         </div>
       </div>

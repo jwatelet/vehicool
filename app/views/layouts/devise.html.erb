@@ -9,19 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'shared/header' %>
-
-    <% if notice.present? %>
-      <div class="notification is-info mt-3" id="notice"><%= notice %>
-      </div>
-    <% end %>
-
-    <% if alert.present? %>
-      <div class="notification is-danger mt-3" id="notice"><%= alert %>
-      </div>
-    <% end %>
-
-    <div class="container">
+    <div>
       <%= yield %>
     </div>
   </body>

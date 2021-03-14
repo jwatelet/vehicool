@@ -1,9 +1,9 @@
 <% content_for :title do %>
   Vehicle &ndash; <%= DateTime.now.to_s(:nice_date) %>
 <% end %>
-<div class="columns mt-6 is-centered">
+<div class="columns mt-6 is-multiline">
   <% @vehicles.each do |vehicle| %>
-    <div class="column is-one-quarter">
+    <div class="column is-one-quarter is-narrow">
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
