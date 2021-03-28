@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles or /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.order(:name)
   end
 
   # GET /vehicles/1 or /vehicles/1.json
@@ -64,6 +64,6 @@ class VehiclesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def vehicle_params
-    params.require(:vehicle).permit(:name, :license_plate, :brand, :serial_number, :tax_horsepower)
+    params.require(:vehicle).permit(:name, :license_plate, :brand_id, :serial_number, :tax_horsepower)
   end
 end

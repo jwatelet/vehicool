@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vehicool</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render 'shared/header' %>
+
+    <% if notice.present? %>
+      <div class="notification column is-info is-4 is-offset-4 mt-4" id="notice"><%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="notification column is-info is-4 is-offset-4 mt-4" id="notice"><%= alert %>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-one-quarter">
+          <%= render 'admin/aside-menu' %>
+        </div>
+
+        <div class="column">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

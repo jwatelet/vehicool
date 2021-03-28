@@ -25,9 +25,9 @@
     <%= form.text_field :license_plate, class:"input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :brand, class: "label" %>
-    <%= form.text_field :brand, class:"input" %>
+  <div class="select is-multiple">
+    <%= form.label :brand_id, class: "label" %>
+    <%= form.collection_select :brand_id, Brand.all, :id, :name, {selected: vehicle.brand_id}, {class: "multiple"} %>
   </div>
 
   <div class="field">
