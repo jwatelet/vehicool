@@ -1,6 +1,6 @@
 <%= form_with(model: vehicle) do |form| %>
   <% if vehicle.errors.any? %>
-    <div class="message is-danger">
+    <div class="message is-danger mt-3">
       <div class="message-header">
         <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
       </div>
@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= form.label :name, class: "label" %>
-    <%= form.text_field :name, class:"input" %>
+    <%= form.text_field :name, class:"input", required: true %>
   </div>
 
   <div class="field">
@@ -25,9 +25,18 @@
     <%= form.text_field :license_plate, class:"input" %>
   </div>
 
-  <div class="select is-multiple">
-    <%= form.label :brand_id, class: "label" %>
-    <%= form.collection_select :brand_id, Brand.all, :id, :name, {selected: vehicle.brand_id}, {class: "multiple"} %>
+  <div class="field">
+    <div class="select is-multiple">
+      <%= form.label :brand_id, class: "label" %>
+      <%= form.collection_select :brand_id, Brand.all, :id, :name, {selected: vehicle.brand_id}, {class: "multiple", required: true} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="select is-multiple">
+      <%= form.label :department_id, class: "label" %>
+      <%= form.collection_select :department_id, Department.all, :id, :name, {selected: vehicle.department_id}, {class: "multiple", required: true} %>
+    </div>
   </div>
 
   <div class="field">

@@ -19,7 +19,7 @@
             <% if brand.vehicles.empty? %>
               <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% else %>
-              <td>Brand used in <%= brand.vehicles.count%> vehicles</td>
+              <td>Used in <%= brand.vehicles.count%> vehicles</td>
             <% end %>
           </tr>
         <% end %>

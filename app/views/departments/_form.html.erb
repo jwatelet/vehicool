@@ -1,13 +1,13 @@
-<%= form_with(model: brand) do |form| %>
-  <% if brand.errors.any? %>
+<%= form_with(model: department) do |form| %>
+  <% if department.errors.any? %>
     <div class="message is-danger mt-3">
       <div class="message-header">
-        <h2><%= pluralize(brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+        <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
       </div>
 
       <div class="message-body">
         <ul>
-          <% brand.errors.each do |error| %>
+          <% department.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
         </ul>

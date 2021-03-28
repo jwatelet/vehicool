@@ -14,6 +14,7 @@
           <div class="content">
             <p>License plate : <span class="has-text-weight-bold"><%= vehicle.license_plate %></span></p>
             <p>Brand of vehicle : <span class="has-text-weight-bold"><%= vehicle.brand&.name %></span></p>
+            <p>Department of vehicle : <span class="has-text-weight-bold"><%= vehicle.department&.name %></span></p>
             <p>Serial number : <span class="has-text-weight-bold"><%= vehicle.serial_number %></span></p>
             <p>Tax horsepower : <span class="has-text-weight-bold"><%= vehicle.tax_horsepower %></span></p>
             <p class="italic">Created <%= time_ago_in_words(vehicle.created_at)%></p>
