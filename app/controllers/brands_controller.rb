@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BrandsController < ApplicationController
   before_action :set_brand, only: %i[show edit update destroy]
   layout 'admin'
