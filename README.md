@@ -2,8 +2,10 @@
 
 - User handling devise
 
-- Strike handling
+- Issues (Km, texte libre, open, date)
 
-- Maintenance handling
+- Maintenance handling -> add information after the maintenance's done
+
+- Winter or summer tires
 
 - departments : name:string

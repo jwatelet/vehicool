@@ -3,6 +3,7 @@
 class Vehicle < ApplicationRecord
   belongs_to :brand
   belongs_to :department
+  has_many :issues, dependent: :destroy
 
   validates :name, presence: true
   validates :brand_id, presence: true
