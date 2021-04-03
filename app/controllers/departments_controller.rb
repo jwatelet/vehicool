@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class DepartmentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_department, only: %i[show edit update destroy]
   layout 'admin'
 
