@@ -1,32 +1,7 @@
 <% content_for :title do %>
-  Vehicle &ndash; <%= DateTime.now.to_s(:nice_date) %>
+Vehicle &ndash; <%= DateTime.now.to_s(:nice_date) %>
 <% end %>
-<div class="columns mt-6 is-multiline">
-  <% @vehicles.each do |vehicle| %>
-    <div class="column is-one-quarter is-narrow">
-      <div class="card">
-        <header class="card-header">
-          <p class="card-header-title">
-            <%= vehicle.name %>
-          </p>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p>License plate : <span class="has-text-weight-bold"><%= vehicle.license_plate %></span></p>
-            <p>Brand of vehicle : <span class="has-text-weight-bold"><%= vehicle.brand&.name %></span></p>
-            <p>Department of vehicle : <span class="has-text-weight-bold"><%= vehicle.department&.name %></span></p>
-            <p>Serial number : <span class="has-text-weight-bold"><%= vehicle.serial_number %></span></p>
-            <p>Tax horsepower : <span class="has-text-weight-bold"><%= vehicle.tax_horsepower %></span></p>
-            <p class="italic">Created <%= time_ago_in_words(vehicle.created_at)%></p>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <%= link_to 'Show', vehicle, class: "card-footer-item"%>
-          <%= link_to 'Edit', edit_vehicle_path(vehicle), class: "card-footer-item"%>
-          <%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item"%>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= turbo_stream_from "vehicles" %>
+<%= turbo_frame_tag "vehicles", class: "columns mt-6 is-multiline" do %>
+<%= render @vehicles %>
+<% end %>
