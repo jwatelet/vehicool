@@ -5,10 +5,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  before_validation :set_default_role
   belongs_to :role
-  before_create :set_default_role
-  # or
-  # before_validation :set_default_role
 
   private
 
