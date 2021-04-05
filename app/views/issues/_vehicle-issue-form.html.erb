@@ -1,0 +1,11 @@
+<%= form_with(model: [@vehicle, Issue.new]) do |form| %>
+<%= form.label :kilometer, class: "label" %>
+<%= form.text_field :kilometer, class:"input" %>
+<%= form.label :text, class: "label" %>
+<%= form.text_area :text, class:"input" %>
+<%= form.label :is_open, class: "label" %>
+<%= form.check_box :is_open %>
+<div class="actions">
+  <%= form.submit class: "button"%>
+</div>
+<% end %>

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_04_03_220703) do
 
   create_table "issues", force: :cascade do |t|
     t.integer "kilometer"
-    t.boolean "is_open"
+    t.boolean "is_open", default: false
     t.string "text"
     t.bigint "vehicle_id"
     t.datetime "created_at", precision: 6, null: false
