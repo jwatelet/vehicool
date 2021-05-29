@@ -1,11 +1,24 @@
 <% content_for :title do %>
 Issues
 <% end %>
-
-<div class="columns mt-6">
-  <%= render @vehicle %>
-  <%= render "issues/vehicle-issue-form", vehicle: @vehicle %>
-</div>
-<div class="columns is-multiline">
-  <%= render @vehicle.issues %>
+<div class="card p-3 mt-3">
+  <div class="columns mt-1">
+    <div class="column is-one-quarter is-narrow">
+      <%= render "vehicles/vehicle-card-light", vehicle: @vehicle %>
+    </div>
+    <div class="column">
+      <%= render "issues/vehicle-issue-form", vehicle: @vehicle %>
+    </div>
+  </div>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th><abbr title="Kilometer">Km</abbr></th>
+        <th><abbr title="Description">Desc</abbr></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @vehicle.issues %>
+    </tbody>
+  </table>
 </div>
