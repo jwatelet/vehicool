@@ -8,6 +8,11 @@ import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
+import $ from "jquery"
+
+global.$ = $
+global.jQuery = $
+
 
 Rails.start()
 ActiveStorage.start()

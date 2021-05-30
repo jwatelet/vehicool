@@ -1,4 +1,11 @@
-<tr class=" <%= issue.is_open ? "has-background-warning" : "" %>">
+<tr id="issue_<%= dom_id(issue)%>" class=" <%= issue.is_open ? "has-background-warning" : "" %>">
   <td><%= issue.kilometer %></td>
   <td><%= issue.text %></td>
+  <% if issue.is_open %>
+  <td><%= link_to 'Close', toogle_published_issue_path(issue), method: :post, class: "button is-primary", remote: true, title: t(:update_published) %></td>
+
+  <% else %>
+  <td><%= link_to 'Open', toogle_published_issue_path(issue), method: :post, class: "button is-danger", remote: true, title: t(:update_published) %></td>
+
+  <% end %>
 </tr>

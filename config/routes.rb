@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :departments
   resources :brands
+  resources :issues do
+    member do
+      post :toogle_published
+    end
+  end
   resources :vehicles do
     resources :issues, controller: 'vehicle_issues'
   end
