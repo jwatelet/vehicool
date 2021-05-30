@@ -1,0 +1,23 @@
+<div class="card p-2">
+  <%= form_with(model: [@vehicle, Issue.new], html: {class: "columns"}) do |form| %>
+  <div class="column">
+    <div class="field">
+      <%= form.label :kilometer, class: "label" %>
+      <%= form.text_field :kilometer, class:"input" %>
+    </div>
+    <div class="field">
+      <%= form.label :is_open, class: "checkbox" %>
+      <%= form.check_box :is_open %>
+    </div>
+  </div>
+  <div class="field column is-half">
+    <%= form.label :text, class: "label" %>
+    <%= form.text_area :text, class:"textarea" %>
+  </div>
+  <div class="column is-flex is-justify-content-center is-align-items-center">
+    <div class="control">
+      <%= form.submit class: "button is-primary"%>
+    </div>
+  </div>
+  <% end %>
+</div>
