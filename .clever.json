@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_0432ab5e-a844-4d78-89b9-54e8cb386497",
+      "org_id": "user_33747553-0922-475e-b5e0-c216573bf51e",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_0432ab5e-a844-4d78-89b9-54e8cb386497.git",
+      "name": "vehicool",
+      "alias": "vehicool"
+    }
+  ]
+}
