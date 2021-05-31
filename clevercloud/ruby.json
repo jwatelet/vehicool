@@ -1,5 +1,5 @@
 {
   "deploy": {
-      "rakegoals": ["db:migrate", "assets:precompile", "webpacker:install"]
+      "rakegoals": ["db:migrate", "assets:precompile", "webpacker:compile"]
   }
 }
