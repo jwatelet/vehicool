@@ -1,6 +1,11 @@
 {
   "deploy": {
-      "rakegoals": ["db:migrate", "assets:precompile", "webpacker:compile"],
+      "rakegoals": [
+        "db:migrate",
+        "db:seed",
+        "assets:precompile",
+        "webpacker:compile"
+      ],
       "static": "/public"
   }
 }
