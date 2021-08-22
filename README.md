@@ -1,3 +1,9 @@
+# Getting started
+
+- `rails db:create`
+- `rails db:migrate`
+- `rails rails db:seed`
+
 # TODO
 
 - User handling devise
