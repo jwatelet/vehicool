@@ -1,22 +1,25 @@
-<div class="card p-2">
-  <%= form_with(model: [@vehicle, Issue.new], html: {class: "columns"}) do |form| %>
-  <div class="column">
+<div class="panel is-primary">
+  <p class="panel-heading">
+    Add issue
+  </p>
+  <%= form_with(model: [@vehicle, Issue.new], html: {class: "columns is-multiline p-2"}, remote: true) do |form| %>
+  <div class="column is-one-quarter">
     <div class="field">
-      <%= form.label :kilometer, class: "label" %>
-      <%= form.text_field :kilometer, class:"input" %>
+      <%= form.text_field :kilometer, class:"input", placeholder:"kilometers total"%>
     </div>
     <div class="field">
-      <%= form.label :is_open, class: "checkbox" %>
-      <%= form.check_box :is_open %>
+      <%= form.label :is_open, class:"checkbox" do %>
+        <%= form.check_box :is_open %>
+        Open ?
+      <% end %>
     </div>
   </div>
-  <div class="field column is-half">
-    <%= form.label :text, class: "label" %>
-    <%= form.text_area :text, class:"textarea" %>
+  <div class="field column is-three-quarter">
+    <%= form.text_area :text, class:"textarea", placeholder:"Issue description"%>
   </div>
-  <div class="column is-flex is-justify-content-center is-align-items-center">
+  <div class="panel-block column is-full is-flex is-flex-direction-row-reverse">
     <div class="control">
-      <%= form.submit class: "button is-primary"%>
+      <%= form.submit class: "button is-primary is-outlined is-fullwidth"%>
     </div>
   </div>
   <% end %>
