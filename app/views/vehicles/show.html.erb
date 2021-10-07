@@ -5,6 +5,7 @@ Issues
   <div class="columns mt-1">
     <div class="column is-one-quarter is-narrow">
       <%= render "vehicles/vehicle-card-light", vehicle: @vehicle %>
+      <img src="<%= @qr_code.to_data_url %>" />
     </div>
     <div class="column">
       <%= render "issues/vehicle-issue-form", vehicle: @vehicle %>

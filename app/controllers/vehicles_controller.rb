@@ -10,7 +10,9 @@ class VehiclesController < ApplicationController
   end
 
   # GET /vehicles/1 or /vehicles/1.json
-  def show; end
+  def show
+    @qr_code = RQRCode::QRCode.new(request.original_url).as_png(size: 300)
+  end
 
   # GET /vehicles/new
   def new
