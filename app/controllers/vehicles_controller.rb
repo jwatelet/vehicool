@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "rqrcode"
 
 class VehiclesController < ApplicationController
   before_action :authenticate_user!
