@@ -1,18 +1,74 @@
-# Getting started
+## Getting started
 
 - `rails db:create`
 - `rails db:migrate`
 - `rails rails db:seed`
 
-# TODO
+## TODO :
 
-- User handling devise
+# Vehicles:
 
-- Issues (Km, texte libre, open, date)
-- vehicles/id/issues
+- Add photo of the vehicle
+- add List of decoration (unmarked car, stipped)
+- Add Fuel type
+- Add displacement
+- Add maximum authorized mass
+- Add leasing / owned car
+- Add Gunlock : yes/no
+- Add radio holder : yes/no
+- Add Tires : winter-summer/ all seasons
+- Add year of first immatriculation
+- Add theoretical decommissioning date
+- Add Technical control
+- Add link to assurance contract
+- Add Location
 
-- Maintenance handling -> add information after the maintenance's done
+# Preview vehicle:
 
-- Winter or summer tires
+Show only:
 
-- departments : name:string
+- PHOTO
+- Department
+- Licence plate
+- Brand
+- Fuel type
+- last kilometers total + date
+
+# Technical control certificate
+
+- Create table
+
+# Assurance compagnies
+
+- Create table
+
+# Assurance contracts
+
+- Create table
+
+# Fuel card
+
+- create table
+- Number
+- code
+
+# CNG card
+
+- Number
+- code
+
+# Issues
+
+- Add category
+- Add out of order yes/no
+- Add dedicated screen, with sortable functionnalities
+- Add "Can the vehicle be driven"
+- Add red icon if the vehicle can't be driven
+
+# QR codes
+
+- Add visualisation screen / printable mode
+
+# Reminder system / appointment
+
+- Send mail for technical control licence
