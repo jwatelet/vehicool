@@ -9,7 +9,7 @@
 #
 
 one:
-  name: MyString
+  name: User
 
 two:
-  name: MyString
+  name: Admin

@@ -20,11 +20,11 @@
 #
 
 one:
-  kilometer: 1
-  is_open: false
-  text: MyString
+  kilometer: 5000
+  is_open: true
+  text: Issue 1
 
 two:
-  kilometer: 1
+  kilometer: 6000
   is_open: false
-  text: MyString
+  text: Issue 2
