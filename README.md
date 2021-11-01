@@ -11,6 +11,7 @@
 - Add photo of the vehicle
 - add List of decoration (unmarked car, stipped)
 - Add Fuel type
+- Add CNG fuel Yes/No
 - Add displacement
 - Add maximum authorized mass
 - Add leasing / owned car
@@ -49,11 +50,6 @@ Show only:
 # Fuel card
 
 - create table
-- Number
-- code
-
-# CNG card
-
 - Number
 - code
 
