@@ -1,8 +1,16 @@
 ## Getting started
 
+run the following commands :
+
 - `rails db:create`
 - `rails db:migrate`
-- `rails rails db:seed`
+- `rails db:seed`
+
+## Run the tests
+
+run the following command :
+
+- `rspec`
 
 ## TODO :
 
