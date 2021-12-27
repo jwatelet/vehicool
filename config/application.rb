@@ -26,6 +26,7 @@ module VehicleManager
       g.template_engine :erb
       g.test_framework :rspec, fixture: false
       g.stylesheets false
+      g.factory_bot suffix: "factory"
     end
   end
 end

@@ -13,4 +13,15 @@ feature "Manage brands" do
     click_button "Create Brand"
     expect(page).to have_content "Brand was successfully created"
   end
+
+  given!(:brand1) { FactoryBot.create(:brand) }
+  given!(:brand2) { FactoryBot.create(:brand) }
+  given!(:brand3) { FactoryBot.create(:brand) }
+
+  scenario "Shows all brands" do
+    visit brands_path
+    expect(page).to have_content brand1.name
+    expect(page).to have_content brand2.name
+    expect(page).to have_content brand3.name
+  end
 end

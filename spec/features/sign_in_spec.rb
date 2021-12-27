@@ -1,5 +1,3 @@
-require "rails_helper"
-
 feature "Signing in" do
   background do
     FactoryBot.create(:user, email: "user@example.com", password: "password")

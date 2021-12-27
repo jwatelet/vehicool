@@ -10,7 +10,7 @@ run the following commands :
 
 run the following command :
 
-- `rspec`
+- `rspec -f d`
 
 ## TODO :
 
