@@ -2,7 +2,7 @@
   <p class="panel-heading">
     Add issue
   </p>
-  <%= form_with(model: [@vehicle, Issue.new], html: {class: "columns is-multiline p-2"}, remote: true) do |form| %>
+  <%= form_with(model: [@vehicle, Issue.new], id: "issue_form", html: {class: "columns is-multiline p-2"}, remote: true) do |form| %>
   <div class="column is-one-quarter">
     <div class="field">
       <%= form.text_field :kilometer, class:"input", placeholder:"kilometers total"%>

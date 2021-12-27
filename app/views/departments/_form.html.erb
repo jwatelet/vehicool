@@ -1,4 +1,4 @@
-<%= form_with(model: department) do |form| %>
+<%= form_with(model: department, id: "department_form") do |form| %>
   <% if department.errors.any? %>
     <div class="message is-danger mt-3">
       <div class="message-header">

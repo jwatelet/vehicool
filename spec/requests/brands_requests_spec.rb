@@ -22,7 +22,7 @@ describe "Public access to brands", type: :request do
       login_as(user)
     end
 
-    it "returns all brands" do
+    it "returns brands" do
       get brands_url
       expect(response).to have_http_status(:success)
     end
