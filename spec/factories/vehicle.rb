@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
-  factory :vehicle, class: "Vehicle" do
+  factory :vehicle, class: 'Vehicle' do
     name { Faker::Vehicle.model }
     license_plate { Faker::Vehicle.license_plate }
     serial_number { Faker::Vehicle.vin }

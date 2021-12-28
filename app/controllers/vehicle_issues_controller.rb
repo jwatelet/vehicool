@@ -5,8 +5,8 @@ class VehicleIssuesController < ApplicationController
   before_action :set_vehicle, only: %i[create]
 
   def create
-    @issue = @vehicle.issues.create(issue_params)
-    redirect_to vehicle_path(@vehicle.id)
+    @issue = @vehicle.issues.create!(issue_params)
+    redirect_to(vehicle_path(@vehicle.id))
   end
 
   private

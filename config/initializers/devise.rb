@@ -1,13 +1,14 @@
 # frozen_string_literal: true
-require "application_helper"
-require "admin_helper"
-require "brands_helper"
-require "departments_helper"
-require "issues_helper"
-require "users_helper"
-require "vehicles_helper"
-require "devise_helper"
-require "application_controller"
+
+require 'application_helper'
+require 'admin_helper'
+require 'brands_helper'
+require 'departments_helper'
+require 'issues_helper'
+require 'users_helper'
+require 'vehicles_helper'
+require 'devise_helper'
+require 'application_controller'
 
 class TurboFailureApp < Devise::FailureApp
   def respond
@@ -19,7 +20,7 @@ class TurboFailureApp < Devise::FailureApp
   end
 
   def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
+    %w[html turbo_stream */*].include?(request_format.to_s)
   end
 end
 
@@ -27,13 +28,13 @@ class TurboController < ApplicationController
   class Responder < ActionController::Responder
     def to_turbo_stream
       controller.render(options.merge(formats: :html))
-    rescue ActionView::MissingTemplate => error
+    rescue ActionView::MissingTemplate => e
       if get?
-        raise error
+        raise(e)
       elsif has_errors? && default_action
-        render rendering_options.merge(formats: :html, status: :unprocessable_entity)
+        render(rendering_options.merge(formats: :html, status: :unprocessable_entity))
       else
-        redirect_to navigation_location
+        redirect_to(navigation_location)
       end
     end
   end
@@ -62,13 +63,13 @@ Devise.setup do |config|
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = "TurboController"
+  config.parent_controller = 'TurboController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -80,7 +81,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require "devise/orm/active_record"
+  require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -170,10 +171,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # rubocop:todo Layout/LineLength
   # config.pepper = '1006db58435d8cffb545b093f071dc70c9dfbad135878a423ba64f6f464487ef4d69692e6251b579fd077565a2a8cb7f3f275558892f331ec27dd32f19708607'
-  # rubocop:enable Layout/LineLength
-
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
 
@@ -309,7 +307,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  config.navigational_formats = ["*/*", :html, :turbo_stream]
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete

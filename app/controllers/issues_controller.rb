@@ -5,7 +5,7 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: %i[toogle_published]
 
   def toogle_published
-    @issue.toggle(:is_open).save
+    @issue.toggle(:is_open).save!
   end
 
   private

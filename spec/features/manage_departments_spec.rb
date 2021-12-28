@@ -1,25 +1,27 @@
-feature "Manage departments" do
-  background do
-    login_as(FactoryBot.create(:user, email: "user@example.com", password: "password"))
+# frozen_string_literal: true
+
+describe 'Manage departments' do
+  before do
+    login_as(create(:user, email: 'user@example.com', password: 'password'))
   end
 
-  scenario "Create a department" do
+  let!(:department3) { create(:department) }
+  let!(:department2) { create(:department) }
+  let!(:department1) { create(:department) }
+
+  it 'Create a department' do
     visit new_department_path
-    within("#department_form") do
-      fill_in "Name", with: "Test department"
+    within('#department_form') do
+      fill_in 'Name', with: 'Test department'
     end
-    click_button "Create Department"
-    expect(page).to have_content "Department was successfully created"
+    click_button 'Create Department'
+    expect(page).to(have_content('Department was successfully created'))
   end
 
-  given!(:department1) { FactoryBot.create(:department) }
-  given!(:department2) { FactoryBot.create(:department) }
-  given!(:department3) { FactoryBot.create(:department) }
-
-  scenario "Shows all brands" do
+  it 'Shows all brands' do
     visit departments_path
-    expect(page).to have_content department1.name
-    expect(page).to have_content department2.name
-    expect(page).to have_content department3.name
+    expect(page).to(have_content(department1.name))
+    expect(page).to(have_content(department2.name))
+    expect(page).to(have_content(department3.name))
   end
 end
