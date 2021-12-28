@@ -6,14 +6,11 @@ describe 'Manage vehicles' do
   end
 
   let!(:brand) { create(:brand) }
-  let!(:vehicle1) { create(:vehicle) }
-  let!(:vehicle2) { create(:vehicle) }
-  let!(:vehicle3) { create(:vehicle) }
   let!(:department) { create(:department) }
 
-  let!(:vehicle3) { create(:vehicle) }
-  let!(:vehicle2) { create(:vehicle) }
   let!(:vehicle1) { create(:vehicle) }
+  let!(:vehicle2) { create(:vehicle) }
+  let!(:vehicle3) { create(:vehicle) }
 
   it 'Create a vehicle' do
     visit new_vehicle_path
