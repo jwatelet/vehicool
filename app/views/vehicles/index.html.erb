@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Vehicle &ndash; <%= DateTime.now.to_s(:nice_date) %>
+  Vehicle 
 <% end %>
 <%= turbo_stream_from "vehicles" %>
 <%= turbo_frame_tag "vehicles", class: "columns mt-6 is-multiline" do %>
