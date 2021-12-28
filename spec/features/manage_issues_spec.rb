@@ -6,6 +6,7 @@ describe 'Manage issues' do
   end
 
   let!(:vehicle) { create(:vehicle) }
+  let!(:issue) { build(:issue, vehicle: vehicle) }
   let!(:issue1) { create(:issue, vehicle: vehicle) }
   let!(:issue2) { create(:issue, vehicle: vehicle) }
   let!(:issue3) { create(:issue, vehicle: vehicle) }
