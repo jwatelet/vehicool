@@ -28,14 +28,17 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'awesome_print', '~> 1.9', '>= 1.9.2'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'cssbundling-rails'
 gem 'devise'
 gem 'hotwire-rails', '~> 0.1.3'
+gem 'jsbundling-rails'
 gem 'rqrcode'
-gem 'cssbundling-rails'
-gem "jsbundling-rails"
-gem "sprockets-rails"
+gem 'sprockets-rails'
+gem 'turbo-rails', '~> 1.0'
 
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -69,6 +72,3 @@ group :test do
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'webdrivers'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

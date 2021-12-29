@@ -2,8 +2,8 @@
   <td><%= issue.kilometer %></td>
   <td><%= issue.text %></td>
   <% if issue.is_open %>
-    <td><%= button_to 'Close', toogle_published_issue_path(issue), method: :post, class: "button is-primary",  data: {remote: true, type: "script"} %></td>
+    <td><%= button_to 'Close', toogle_published_issue_path(issue), method: :post, class: "button is-primary",  remote: true %></td>
   <% else %>
-    <td><%= button_to 'Open', toogle_published_issue_path(issue), method: :post, class: "button is-danger",  data: {remote: true, type: "script"} %></td>
+    <td><%= button_to 'Open', toogle_published_issue_path(issue), method: :post, class: "button is-danger", remote: true  %></td>
   <% end %>
 </tr>
