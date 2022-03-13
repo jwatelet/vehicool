@@ -17,7 +17,7 @@
             <td><%= brand.name %></td>
             <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
             <% if brand.vehicles.empty? %>
-              <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= button_to 'Destroy', brand, method: :delete, data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %></td>
             <% else %>
               <td>Used in <%= brand.vehicles.count%> vehicles</td>
             <% end %>
